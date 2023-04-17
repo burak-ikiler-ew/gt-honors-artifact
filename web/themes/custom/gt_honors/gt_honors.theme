@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains theme override functions and preprocess functions.
+ */
+
+
+/**
+ * Implements template_preprocess_block().
+ */
+function gt_honors_preprocess_block(&$variables) {
+  if (isset($variables['configuration']['id'])) {
+    $variables['content']['#attributes']['block'] = $variables['configuration']['id'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ */
+function gt_honors_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if (isset($variables['attributes']['block'])) {
+    $block = explode(':', $variables['attributes']['block'])[0];
+    $hook = str_replace(['block-', '-', ':'], ['', '_', '_'], $variables['attributes']['block']);
+    array_unshift($suggestions , 'menu__' . $hook);
+    array_unshift($suggestions , 'menu__' . $block);
+  }
+}

@@ -1,0 +1,20 @@
+{% set prefix = 'basic-content' %}
+
+{%
+  set classes = [
+    prefix,
+    'container-lg',
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title %}
+    <h2 class="{{ prefix }}__title">
+      <i class="{{ prefix }}__icon {{ prefix }}__icon--{{ icon_position }} icon-{{ icon_class }}"></i>
+      {{ title }}
+    </h2>
+  {% endif %}
+  <div class="{{ prefix }}__body">
+    {{ body }}
+  </div>
+</div>

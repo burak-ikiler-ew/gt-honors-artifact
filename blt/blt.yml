@@ -1,0 +1,111 @@
+project:
+  human_name: GT Honors Program
+  machine_name: gt_honors
+  profile:
+    name: minimal
+  theme:
+    name: 'gt_honors'
+  local:
+    hostname: ${project.machine_name}.ddev.site
+    protocol: https
+    uri: ${project.local.protocol}://${project.local.hostname}:9443
+
+# Git configuration.
+git:
+  user:
+    name: 'Drupal CI'
+    email: 'drupal-ci@ewdev.ca'
+  default_branch: master
+  remotes:
+    - git@github.com:burak-ikiler-ew/gt-honors-artifact.git
+  commit-msg:
+    pattern: "/(^refs #[0-9]+(: )[^ ].{15,}\\.)|(Merge branch (.)+)/"
+    help_description: "The commit message should start with refs,
+                      followed by a # and ticket number, followed by a colon and a space,
+                      fifteen characters or more describing the commit, and end with a period."
+    example: "refs #123: Update site configuration."
+
+# Settings for installing Drupal.
+drupal:
+  db:
+    database: db
+    username: db
+    password: db
+    host: ddev-gt-honors-db
+    port: 3306
+
+# Deploy.
+deploy:
+  tag_source: false
+  dir: deploy
+  docroot: ${deploy.dir}/web
+
+# Drupal docroot.
+docroot: ${repo.root}/web
+
+# Hooks.
+command-hooks:
+  post-deploy-build:
+    dir: ${repo.root}
+    command: ./scripts/pantheon/post-deploy-build
+  frontend-reqs:
+    dir: ${docroot}/themes/custom/${project.theme.name}
+    command: 'npm install && npm run build'
+
+# Drush.
+drush:
+  aliases:
+    remote: '${project.machine_name}.test'
+    local: self
+    ci: self
+  default_alias: '${drush.aliases.local}'
+
+# An array of modules to be enabled or uninstalled automatically in local, ci,
+# and deploy contexts.
+modules:
+  local:
+    enable:
+      - dblog
+      - devel
+      - seckit
+      - views_ui
+    uninstall:
+      - acquia_connector
+      - shield
+  ci:
+    enable: {  }
+    uninstall:
+      - acquia_connector
+      - shield
+  dev:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall: {  }
+  test:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall:
+      - devel
+      - views_ui
+  prod:
+    enable:
+      - acquia_connector
+      - shield
+    uninstall:
+      - devel
+      - views_ui
+
+# Linting.
+validate:
+  twig:
+    functions:
+      - pattern
+      - drupal_block
+      - drupal_entity
+      - drupal_view
+    filters:
+      - truncate
+      - image_style
+      - view

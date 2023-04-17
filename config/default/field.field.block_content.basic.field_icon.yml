@@ -1,0 +1,29 @@
+uuid: b62ecba7-77d7-4543-a170-e4613d6e544a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.block_content.field_icon
+    - taxonomy.vocabulary.icons
+id: block_content.basic.field_icon
+field_name: field_icon
+entity_type: block_content
+bundle: basic
+label: icon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

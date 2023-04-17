@@ -1,0 +1,57 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.basic-content {
+  &__title {
+    vertical-align: center;
+    margin-bottom: 2.25rem;
+  }
+
+  &__icon {
+    display: flex;
+    vertical-align: middle;
+    margin-right: 1.25rem;
+
+    &::before {
+      color: $color-tech-gold;
+      @extend %icon;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: inline-flex;
+    }
+
+    &--above {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+      }
+    }
+  }
+
+  &__body {
+    @extend %font-lg;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// Apply only inside layout__region--first.
+.layout__region--first {
+  .basic-content {
+    @include media-breakpoint-up(sm) {
+      &__title {
+        max-width: 70%;
+      }
+    }
+  }
+}
+
+.layout--twocol-section {
+  .basic-content.container-lg {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

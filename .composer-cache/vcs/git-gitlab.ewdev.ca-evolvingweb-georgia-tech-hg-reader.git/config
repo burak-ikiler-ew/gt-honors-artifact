@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = git@gitlab.ewdev.ca:evolvingweb/georgia-tech/hg_reader.git
+	fetch = +refs/*:refs/*
+	mirror = true

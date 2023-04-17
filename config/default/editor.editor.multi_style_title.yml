@@ -1,0 +1,51 @@
+uuid: 85c6e035-d4c7-4f19-8adb-3437920cd04f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.multi_style_title
+  module:
+    - ckeditor5
+format: multi_style_title
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - style
+      - '|'
+      - heading
+      - sourceEditing
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading1
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<span>'
+        - '<h1 id>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Title (Sans-serif)'
+          element: '<span class="h1">'
+        -
+          label: 'Title (Slab)'
+          element: '<span class="h1-slab">'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

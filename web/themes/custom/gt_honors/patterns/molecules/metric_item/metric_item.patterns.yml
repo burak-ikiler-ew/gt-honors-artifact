@@ -1,0 +1,29 @@
+metric_item:
+  label: Metric Item
+  description: Metric Item.
+  variants:
+    default:
+      label: Default
+      description: 'Default article card.'
+    featured:
+      label: Featured
+      description: 'Featured article card.'
+    hexagon:
+      label: Hexagon
+      description: 'Hexagon article card.'
+  fields:
+    title:
+      type: text
+      label: Metric Item Title
+      description: Metric Item title.
+    description:
+      type: text
+      label: Metric Item Title
+      description: Metric Item title.
+
+  libraries:
+    -
+      metric_item:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }

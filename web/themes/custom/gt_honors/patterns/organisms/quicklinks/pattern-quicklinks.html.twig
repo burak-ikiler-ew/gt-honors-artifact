@@ -1,0 +1,22 @@
+{% set prefix = 'quicklinks' %}
+
+{%
+  set classes = [
+    prefix,
+  ]
+%}
+
+<div class="quicklinks-wrapper--default container-lg">
+  {% if title %}
+    <div class="container-lg">
+      <h2 class="{{ prefix }}__title">
+        <i class="{{ prefix }}__icon icon-{{ icon_class }}"></i>
+        {{ title }}
+      </h2>
+    </div>
+  {% endif %}
+  <div {{ attributes.addClass(classes) }}>
+    <div class="{{ prefix }}__hatch"></div>
+    {{ content }}
+  </div>
+</div>

@@ -1,0 +1,60 @@
+gallery:
+  label: Image gallery
+  description: Image gallery.
+  fields:
+    title:
+      type: text
+      label: Title
+      description: Title of the image gallery.
+      preview: "Image gallery"
+    images:
+      type: mixed
+      label: Gallery images
+      description: Image entities.
+    paragraph_id:
+      type: mixed
+      label: Paragraph id
+      description: Id
+  libraries:
+    -
+      gallery:
+        css:
+          component:
+            dist/css/styles.min.css: { minified: true }
+
+gallery_item:
+  label: Gallery item
+  description: Images in gallery.
+  fields:
+    caption:
+      type: text
+      label: Caption
+      description: Caption of the image.
+      preview: 'Phonetic alphabets'
+    image:
+      type: string
+      label: Image
+      description: Markup for an image. Alternatively, provide image_* properties.
+      preview:
+        theme: image
+        uri: https://picsum.photos/1280/560
+    pid:
+      type: text
+      label: Paragraph ID
+      description: Paragraph ID
+      preview: '25025'
+    parent:
+      type: text
+      label: Paragraph ID
+      description: Paragraph ID
+      preview: '25025'
+    path:
+      type: string
+      label: Link URL
+      description: URL to the content.
+      preview: ''
+  libraries:
+    - gallery_item:
+        css:
+          component:
+            css/styles.min.css: { minified: true }

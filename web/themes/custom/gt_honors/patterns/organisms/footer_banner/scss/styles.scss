@@ -1,0 +1,42 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.footer-banner {
+  padding: px-to-rem(60) 0;
+  background: $color-navy-blue url("/themes/custom/gt_honors/images/footer-banner_hexagons.svg") no-repeat;
+  background-size: px-to-rem(400px);
+  background-position: left 1rem top 3rem;
+  color: $color-white;
+
+  @include media-breakpoint-up(sm) {
+    background-position: right 3rem center;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin-bottom: px-to-rem(36px);
+
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    margin-right: px-to-rem(26px);
+  }
+
+  &__link {
+    margin-top: px-to-rem(40px);
+
+    @include media-breakpoint-up(lg) {
+      margin-top: px-to-rem(64px);
+    }
+
+    a,
+    button {
+      @include gtl-button--primary;
+    }
+  }
+}

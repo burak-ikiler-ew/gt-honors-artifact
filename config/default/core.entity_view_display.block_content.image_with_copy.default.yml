@@ -1,0 +1,84 @@
+uuid: 772f5b8b-9b63-4449-8995-d8f292d131e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_with_copy
+    - field.field.block_content.image_with_copy.body
+    - field.field.block_content.image_with_copy.field_image_card__image
+    - field.field.block_content.image_with_copy.field_link
+  module:
+    - fences
+    - field_formatter_class
+    - link
+    - text
+_core:
+  default_config_hash: zoGA9Wx65hVQ-O84xsJQPGPw5zgbfsk3MR8libbDNfQ
+id: block_content.image_with_copy.default
+targetEntityType: block_content
+bundle: image_with_copy
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: content
+  field_image_card__image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: image_card
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 7
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 6
+    region: content
+hidden:
+  search_api_excerpt: true

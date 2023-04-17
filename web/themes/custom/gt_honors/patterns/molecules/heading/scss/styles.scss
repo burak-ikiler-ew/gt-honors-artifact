@@ -1,0 +1,40 @@
+@import "src/sass/core";
+@import "src/sass/placeholders/index";
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+
+  &__icon {
+    vertical-align: middle;
+    margin-right: 1.25rem;
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      display: inline-flex;
+    }
+
+    &::before {
+      color: $color-tech-gold;
+      @extend %icon;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-size: $font-20;
+    line-height: 1.625rem;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,167 @@
+uuid: fd7350af-8b7d-4b56-90f6-2616ed1c8878
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.hg_news.body
+    - field.field.node.hg_news.field_author_name
+    - field.field.node.hg_news.field_hg_categories
+    - field.field.node.hg_news.field_hg_contact
+    - field.field.node.hg_news.field_hg_core_research_areas
+    - field.field.node.hg_news.field_hg_dateline
+    - field.field.node.hg_news.field_hg_email
+    - field.field.node.hg_news.field_hg_id
+    - field.field.node.hg_news.field_hg_images
+    - field.field.node.hg_news.field_hg_importer
+    - field.field.node.hg_news.field_hg_keywords
+    - field.field.node.hg_news.field_hg_location
+    - field.field.node.hg_news.field_hg_news_room_topics
+    - field.field.node.hg_news.field_hg_related_files
+    - field.field.node.hg_news.field_hg_related_links
+    - field.field.node.hg_news.field_hg_sidebar
+    - field.field.node.hg_news.field_hg_source_updated
+    - field.field.node.hg_news.field_hg_subtitle
+    - field.field.node.hg_news.field_hg_summary
+    - field.field.node.hg_news.field_hg_summary_sentence
+    - field.field.node.hg_news.field_hg_youtube_video
+    - node.type.hg_news
+  module:
+    - datetime
+    - fences
+    - field_formatter_class
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: rUhL5yjW7GQtzf32SWw3UCRV-Aj-7qtMo56D5kz8UFw
+id: node.hg_news.search_index
+targetEntityType: node
+bundle: hg_news
+mode: search_index
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hg_contact:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_hg_core_research_areas:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_hg_dateline:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_items_wrapper_tag: none
+        fences_field_items_wrapper_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  field_hg_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_hg_keywords:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_hg_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_hg_news_room_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_hg_related_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_hg_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hg_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hg_summary_sentence:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_author_name: true
+  field_hg_categories: true
+  field_hg_id: true
+  field_hg_images: true
+  field_hg_importer: true
+  field_hg_related_files: true
+  field_hg_sidebar: true
+  field_hg_source_updated: true
+  field_hg_youtube_video: true
+  links: true
+  search_api_excerpt: true

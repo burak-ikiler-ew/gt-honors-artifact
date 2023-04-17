@@ -1,0 +1,11 @@
+{# HG Mercury Event Template #}
+
+  {{ pattern('event_card', {
+    event_start: event_start_time,
+    event_end: event_end_time,
+    url: path('entity.node.canonical', {'node': node.id}),
+    title: node.title.value,
+    summary: content.field_hg_summary[0],
+    summary_sentence: content.field_hg_summary_sentence[0],
+    location: content.field_hg_location,
+  }, 'teaser') }}

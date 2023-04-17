@@ -1,0 +1,61 @@
+uuid: a5f00c00-748f-4595-a42f-ea2b5f6b7bdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.metric_list.field_display_type
+    - field.field.paragraph.metric_list.field_metric_items
+    - field.field.paragraph.metric_list.field_sub_title
+    - field.field.paragraph.metric_list.field_title
+    - paragraphs.paragraphs_type.metric_list
+  module:
+    - paragraphs
+id: paragraph.metric_list.default
+targetEntityType: paragraph
+bundle: metric_list
+mode: default
+content:
+  field_display_type:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_metric_items:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: metric_item
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_sub_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
